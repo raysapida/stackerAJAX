@@ -126,3 +126,19 @@ var getInspiration = function(tags) {
 };
 
 
+var showUser = function(user) {
+
+  var result = $('.templates .user').clone();
+
+  var userElem = result.find('.name a');
+  userElem.attr('href', user.user.link);
+  userElem.text(user.user.display_name);
+
+  var post = result.find('.post-count');
+  post.text(user.post_count);
+
+  var score = result.find('.score');
+  score.text(user.score);
+
+  return result;
+};
